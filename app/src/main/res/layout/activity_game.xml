@@ -2,24 +2,24 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="0dp"
-                android:paddingBottom="0dp"
                 tools:context="com.nancywismer.game.GameActivity"
-                android:background="#ffa3ccff"
                 android:rowCount="5"
                 android:columnCount="3"
                 android:alignmentMode="alignBounds"
                 android:touchscreenBlocksFocus="true"
-                android:paddingLeft="10dp"
-                android:paddingRight="40dp"
                 android:nestedScrollingEnabled="true"
-                android:id="@+id/grid">
+                android:id="@+id/grid"
+                android:background="#8ef26bae"
+                android:paddingLeft="35dp"
+                android:columnOrderPreserved="false"
+                android:paddingTop="20dp">
 
     <View
         android:id="@+id/circle1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/circle">
+        android:background="@drawable/circle"
+        >
     </View>
     <View
         android:id="@+id/circle2"

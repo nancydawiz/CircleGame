@@ -12,6 +12,7 @@ import android.widget.Button;
 public class MainActivity extends ActionBarActivity {
 
     private Button mStartButton;
+    private Button mInstruction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +20,20 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         mStartButton = (Button) findViewById(R.id.startButton);
+        mInstruction = (Button) findViewById(R.id.instruction);
         mStartButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        mInstruction.setOnClickListener(new View.OnClickListener() {
+               @Override
+            public void onClick(View v) {
+                Intent instruct = new Intent(MainActivity.this, Instructions.class);
+                startActivity(instruct);
             }
         });
 

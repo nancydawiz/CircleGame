@@ -1,5 +1,8 @@
 package com.nancywismer.game;
 
+import android.animation.AnimatorListenerAdapter;
+import android.content.Intent;
+import android.graphics.Color;
 import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +13,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
@@ -23,6 +27,8 @@ public class GameActivity extends ActionBarActivity {
     View[] cir = new View[15];
     private int [] winners = new int[5];
     private int loser;
+    private int [] visited = new int [15];
+    int count = 0;
 
    /* View.OnClickListener mListener = new View.OnClickListener() {
         @Override
@@ -38,18 +44,7 @@ public class GameActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Random random = new Random();
-        loser = random.nextInt();
-        do
-            winners[0] = random.nextInt(14);
-        while (winners[0] == loser);
-
-        for(int i = 1; i < 13; i ++){
-            winners[i] = random.nextInt(14);
-            while (winners[i] == winners[i-1] || winners[i] == loser){
-                winners[i] = random.nextInt();
-            }
-        }
-
+        loser = random.nextInt(15);
 
         cir[0] = findViewById(R.id.circle1);
         cir[1] = findViewById(R.id.circle2);
@@ -66,6 +61,11 @@ public class GameActivity extends ActionBarActivity {
         cir[12] = findViewById(R.id.circle13);
         cir[13] = findViewById(R.id.circle14);
         cir[14] = findViewById(R.id.circle15);
+        for(int i = 0; i < 15; i++)
+        {
+            cir[i].setBackgroundColor(Color.TRANSPARENT);
+        }
+
 
 
         for (int i = 0; i < 15; i++) {
@@ -73,8 +73,32 @@ public class GameActivity extends ActionBarActivity {
             cir[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (finalI == winners[0] || finalI == winners[1] || finalI == winners[2] || finalI == winners[3]) {
-                        cir[finalI].setBackgroundColor(0xff0000);
+                    if (finalI == loser) {
+                        Intent intent = new Intent(GameActivity.this,GameOver.class);
+                        startActivity(intent);
+                    } else {
+                        if (visited[finalI] == 0){
+                            count++;
+                            visited[finalI] = 1;
+                            Random random = new Random();
+                            int colorNum = random.nextInt(4);
+                            if (colorNum == 0){
+                                cir[finalI].setBackgroundColor(0xffAC3BD4);
+                            } else if (colorNum ==1){
+                                cir[finalI].setBackgroundColor(0xffB764D4);
+                            } else if (colorNum == 2) {
+                                cir[finalI].setBackgroundColor(0xff67237F);
+                            } else if (colorNum == 3){
+                                cir[finalI].setBackgroundColor(0xff52026E);
+                            }
+
+                        }
+
+                        if (count >= 14){
+                            Intent win = new Intent(GameActivity.this, Win.class);
+                            startActivity(win);
+                        }
+
                     }
                 }
             });

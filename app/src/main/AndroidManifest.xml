@@ -20,6 +20,18 @@
             android:name=".GameActivity"
             android:label="@string/title_activity_game" >
         </activity>
+        <activity
+            android:name=".GameOver"
+            android:label="@string/title_activity_game_over" >
+        </activity>
+        <activity
+            android:name=".Win"
+            android:label="@string/title_activity_win" >
+        </activity>
+        <activity
+            android:name=".Instructions"
+            android:label="@string/title_activity_instructions" >
+        </activity>
     </application>
 
 </manifest>
