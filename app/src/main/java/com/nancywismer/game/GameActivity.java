@@ -7,29 +7,34 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.TextView;
 
 
 public class GameActivity extends ActionBarActivity {
 
     private int mScore = 0;
+    private View mTopBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        final Animation up = new TranslateAnimation(0,0,0,-1000);
-        up.setDuration(3000);
-        up.setRepeatCount(10);
+        //Animation that makes the bubbles go up
+        final Animation up = new TranslateAnimation(0,0,0,-1050);
+        up.setDuration(2000);
+        up.setRepeatCount(-1);
 
         final View circle = findViewById(R.id.circle);
         circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                circle.setAnimation(up);
+                circle.setVisibility(View.INVISIBLE);
             }
         });
-        //circle.setAnimation(up);
+        circle.setAnimation(up);
+
+
     }
 
 
