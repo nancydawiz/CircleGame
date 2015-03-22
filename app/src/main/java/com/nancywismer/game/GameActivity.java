@@ -11,17 +11,25 @@ import android.view.animation.TranslateAnimation;
 
 public class GameActivity extends ActionBarActivity {
 
+    private int mScore = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        Animation up = new TranslateAnimation(0,0,100,0);
-        up.setDuration(1000);
-        up.setRepeatCount(-1);
+        final Animation up = new TranslateAnimation(0,0,0,-1000);
+        up.setDuration(3000);
+        up.setRepeatCount(10);
 
-        View circle = findViewById(R.id.circle);
-        circle.setAnimation(up);
+        final View circle = findViewById(R.id.circle);
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                circle.setAnimation(up);
+            }
+        });
+        //circle.setAnimation(up);
     }
 
 
