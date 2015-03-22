@@ -1,40 +1,115 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
                 tools:context="com.nancywismer.game.GameActivity"
-                android:background="#ffa3ccff">
+                android:background="#ffa3ccff"
+                android:rowCount="5"
+                android:columnCount="3"
+                android:alignmentMode="alignBounds"
+                android:touchscreenBlocksFocus="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="40dp"
+                android:nestedScrollingEnabled="true"
+                android:id="@+id/grid">
+
     <View
-        android:id="@+id/circle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/circle1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@drawable/circle"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:padding="100dp">
     </View>
-
     <View
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#ff8b898e"
-        android:layout_marginTop="72dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:id="@+id/circle6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle7"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle8"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle9"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle10"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle11"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle12"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle13"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle14"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
+    </View>
+    <View
+        android:id="@+id/circle15"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle">
     </View>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="0"
-        android:id="@+id/score"
-        android:layout_alignBottom="@+id/line"
-        android:layout_centerHorizontal="true"
-        android:paddingBottom="30dp"/>
 
 
-</RelativeLayout>
+
+
+
+</GridLayout>
